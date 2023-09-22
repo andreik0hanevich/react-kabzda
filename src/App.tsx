@@ -18,7 +18,6 @@ function App() {
       <Rating value={4} />
       <Rating value={5} />
       <OnOff name={'ON'}/>
-      <OnOff name={'OFF'}/>
     </div>
   );
 }
