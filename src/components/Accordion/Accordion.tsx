@@ -1,37 +1,44 @@
-import React from "react";
+import React, {useState} from "react";
 
 type AccordionType = {
     titleValue: string
-    collapsed: boolean
+    // collapsed: boolean
 }
 
+
 function Accordion(props: AccordionType) {
-        return (
-            <div>
-                <AccordionTitle title={props.titleValue}/>
-                {!props.collapsed && <AccordionBody/>}
-            </div>
-        );
-    }
+
+    const [collapsed, setCollapsed] = useState(true)
+
+    return (
+        <div>
+            <button onClick={() => {setCollapsed(!collapsed)}}>{collapsed ? 'Open' : 'Close'}</button>
+            <AccordionTitle title={props.titleValue}/>
+            {!collapsed && <AccordionBody/>}
+        </div>
+
+    );
+}
 
 function AccordionTitle(props: any) {
-  console.log("AccordionTitle rendering");
+    console.log("AccordionTitle rendering");
 
-  return <h3>{props.title}</h3>;
+
+    return <h3>{props.title}</h3>;
 }
 
 function AccordionBody() {
-  console.log("AccordionBody rendering");
+    console.log("AccordionBody rendering");
 
-  return (
-    <div>
-      <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-      </ul>
-    </div>
-  );
+    return (
+        <div>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+    );
 }
 
 export default Accordion;
