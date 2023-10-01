@@ -7,16 +7,16 @@ import {OnOff} from "./components/OnOff/OnOff";
 function App() {
 
   return (
-    <div>
+    <div className={'App'}>
       <PageTitle title={"This is APP component"} />
       <PageTitle title={"My friends"} />
       <Accordion titleValue={"Menu"}  />
       <Accordion titleValue={"Users"} />
-      <Rating value={1} />
-      <Rating value={2} />
-      <Rating value={3} />
-      <Rating value={4} />
-      <Rating value={5} />
+      <Rating />
+      <Rating />
+      <Rating />
+      <Rating />
+      <Rating />
       <OnOff  />
       <OnOff  />
       <OnOff  />
